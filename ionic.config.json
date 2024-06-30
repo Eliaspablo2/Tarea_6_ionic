@@ -1,0 +1,13 @@
+{
+  "name": "Tarea_6",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://universities.hipolabs.com"
+    }
+  ]
+}

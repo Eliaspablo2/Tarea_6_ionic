@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>genero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">genero</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item>
+    <h1>Dime el nombre que quiera y te dire su genero.</h1>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="name" (ionInput)="onNameInput()"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="predictGender()">Predecir Género</ion-button>
+
+  <div *ngIf="gender" class="result">
+    <img *ngIf="getGenderImage()" [src]="getGenderImage()" alt="{{ gender }} image">
+  </div>
+</ion-content>

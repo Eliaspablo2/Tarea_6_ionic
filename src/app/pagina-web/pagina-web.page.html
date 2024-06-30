@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>pagina_web</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">pagina_web</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="logo-container">
+    <img [src]="logoUrl" alt="GamersRD Logo">
+  </div>
+
+  <ion-list *ngIf="news.length > 0">
+    <ion-item *ngFor="let article of news">
+      <ion-thumbnail slot="start">
+        <img *ngIf="article.jetpack_featured_media_url" [src]="article.jetpack_featured_media_url">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ article.title.rendered }}</h2>
+        <p [innerHTML]="article.excerpt.rendered"></p>
+        <ion-button fill="clear" href="{{ article.link }}" target="_blank">Visit</ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
